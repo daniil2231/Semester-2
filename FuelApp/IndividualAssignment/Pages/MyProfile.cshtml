@@ -1,0 +1,52 @@
+﻿@page
+@model IndividualAssignment.Pages.MyProfileModel
+@{ }
+
+<body id="my-profile">
+    <div id="my-profile-form-wrap">
+        <h2>My profile</h2>
+        <form id="username-password-form" method="post">
+            <h3>Account info</h3>
+            <p>
+                <input type="text" id="username" name="username" asp-for="customer.Username" value="@Model.customer.Username" required readonly>
+            </p>
+            <p>
+                <input type="password" id="password" name="password" asp-for="customer.Password" value="@Model.customer.Password">
+            </p>
+            <h3>Payment/delivery info</h3>
+            <p>
+                <input type="text" id="cardNumber" name="cardNumber" asp-for="customer.CardNumber" value="@Model.customer.CardNumber">
+            </p>
+            <p>
+                <input type="text" id="cardValidThru" name="cardValidThru" asp-for="customer.CardValidThru" value="@Model.customer.CardValidThru">
+            </p>
+            <p>
+                <input type="text" id="cardCVC" name="cardCVC" asp-for="customer.CardCVC" value="@Model.customer.CardCVC">
+            </p>
+            <p>
+                <input type="text" id="zipCode" name="zipCode" asp-for="customer.ZipCode" value="@Model.customer.ZipCode">
+            </p>
+            <p>
+                <input type="text" id="phoneNumber" name="phoneNumber" asp-for="customer.PhoneNumber" value="@Model.customer.PhoneNumber">
+            </p>
+            <p>
+                <input type="submit" id="update-account-info" value="Update account info">
+            </p>
+        </form>
+        <h3 align="center" style="color:red">@Html.ValidationMessage("EmptyFields")</h3>
+        @for (int i = 0; i < Model.errors.Count; i++)
+        {
+<h3 align="center" style="color:red">@Html.ValidationMessage(i.ToString())</h3>}
+    </div>
+    <div class="side-menu">
+        <a href="BuyFuel" class="side-menu-buy">Buy fuel</a>
+        <hr class="solid">
+        <a href="MyProfile" class="side-menu-profile">My profile</a>
+        <hr class="solid">
+        <a href="Logout" class="side-menu-profile">Logout</a>
+        <hr class="solid">
+    </div>
+    <footer>
+        <p>Got any questions? Contact:<br>Email: daniilblagoev@gmail.com</p>
+    </footer>
+</body>

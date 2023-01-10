@@ -1,0 +1,12 @@
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\bin\Release\net5.0\IndividualAssignmentLibrary.deps.json
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\bin\Release\net5.0\IndividualAssignmentLibrary.dll
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\bin\Release\net5.0\ref\IndividualAssignmentLibrary.dll
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\bin\Release\net5.0\IndividualAssignmentLibrary.pdb
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\obj\Release\net5.0\IndividualAssignmentLibrary.csproj.AssemblyReference.cache
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\obj\Release\net5.0\IndividualAssignmentLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\obj\Release\net5.0\IndividualAssignmentLibrary.AssemblyInfoInputs.cache
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\obj\Release\net5.0\IndividualAssignmentLibrary.AssemblyInfo.cs
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\obj\Release\net5.0\IndividualAssignmentLibrary.csproj.CoreCompileInputs.cache
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\obj\Release\net5.0\IndividualAssignmentLibrary.dll
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\obj\Release\net5.0\ref\IndividualAssignmentLibrary.dll
+C:\Users\35988\Desktop\wad_fitness-main\IndividualAssignmentLibrary\obj\Release\net5.0\IndividualAssignmentLibrary.pdb

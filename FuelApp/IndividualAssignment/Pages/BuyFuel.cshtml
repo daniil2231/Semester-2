@@ -1,0 +1,57 @@
+﻿@page
+@model IndividualAssignment.Pages.BuyFuelModel
+@{ }
+
+<body id="buy-fuel">
+    <section>
+        @foreach (var diesel in Model.FuelManager.GetDiesels())
+        {
+    <form method="post">
+        <article class="fuel_card">
+            <h1>@diesel.FuelName</h1>
+            <h3>$@diesel.PricePerLiter/L</h3>
+            <p>
+                Purity: @diesel.Purity%<br>Viscosity: @diesel.Viscosity<br>Suitable for: @diesel.Suitability
+            </p>
+            <p>
+                <input type="text" id="LitersToBuy" name="LitersToBuy" asp-for="LitersToBuy" placeholder="Liters" value="" required>
+            </p>
+            <p>
+                <input name=@($"purchase{diesel.FuelName}") type="submit" id="purchase" value="Purchase">
+            </p>
+        </article>
+    </form>}
+
+        @foreach (var cng in Model.FuelManager.GetCNGs())
+        {
+    <form method="post">
+        <article class="fuel_card">
+            <h1>@cng.FuelName</h1>
+            <h3>$@cng.PricePerLiter/L</h3>
+            <p>
+                Purity: @cng.Purity%<br>Airflow resistance: @cng.AirflowResistance<br>Suitable for: @cng.Suitability
+            </p>
+            <p>
+                <input type="text" id="LitersToBuy" name="LitersToBuy" asp-for="LitersToBuy" placeholder="Liters" value="" required>
+            </p>
+            <p>
+                <input name="@($"purchase{cng.FuelName}")" type="submit" id="purchase" value="Purchase">
+            </p>
+        </article>
+    </form>}
+        @if (Model.FillUpTime > 0)
+        {
+    <h4 align="center" style="color:#00524E">Fill up time: @Model.FillUpTime seconds</h4>}
+    </section>
+    <div class="side-menu">
+        <a href="/BuyFuel" class="side-menu-buy">Buy fuel</a>
+        <hr class="solid">
+        <a href="/MyProfile" class="side-menu-profile">My profile</a>
+        <hr class="solid">
+        <a href="/Logout" class="side-menu-profile">Logout</a>
+        <hr class="solid">
+    </div>
+    <footer>
+        <p>Got any questions? Contact:<br>Email: daniilblagoev@gmail.com</p>
+    </footer>
+</body>

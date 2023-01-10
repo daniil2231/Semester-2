@@ -1,0 +1,106 @@
+﻿@page
+@model IndividualAssignment.Pages.AdminAddFuelModel
+@{ }
+
+
+<body id="buy-fuel">
+    <section>
+        <form method="post">
+            <article class="add_fuel">
+                <h1>Add Diesel</h1>
+                <p>
+                    <input type="text" id="fuelName" name="fuelName" asp-for="Diesel.FuelName" placeholder="Fuel name..." value="">
+                </p>
+                <p>
+                    <input type="text" id="price" name="pricePerLiter" asp-for="Diesel.PricePerLiter" placeholder="Price..." value="">
+                </p>
+                <p>
+                    <input type="text" id="purity" name="purity" asp-for="Diesel.Purity" placeholder="Purity..." value="">
+                </p>
+                <p>
+                    <input type="text" id="viscosity" name="viscosity" asp-for="Diesel.Viscosity" placeholder="Viscosity..." value="">
+                </p>
+                <p>
+                    <input type="text" id="suitability" name="suitability" asp-for="Diesel.Suitability" placeholder="Suitable for..." value="">
+                </p>
+                <p>
+                    <input type="submit" id="add" value="Add Diesel" asp-page-handler="AddDiesel">
+                </p>
+                <h4 align="center" style="color:red">@Html.ValidationMessage("EmptyFieldsDiesel")</h4>
+            </article>
+        </form>
+        <form method="post">
+            <article class="add_fuel">
+                <h1>Add CNG</h1>
+                <p>
+                    <input type="text" id="fuelName" name="fuelName" asp-for="Cng.FuelName" placeholder="Fuel name..." value="">
+                </p>
+                <p>
+                    <input type="text" id="price" name="pricePerLiter" asp-for="Cng.PricePerLiter" placeholder="Price..." value="">
+                </p>
+                <p>
+                    <input type="text" id="purity" name="purity" asp-for="Cng.Purity" placeholder="Purity..." value="">
+                </p>
+                <p>
+                    <input type="text" id="airflowResistance" name="airflowResistance" asp-for="Cng.AirflowResistance" placeholder="Airflow resistance..." value="">
+                </p>
+                <p>
+                    <input type="text" id="suitability" name="suitability" asp-for="Cng.Suitability" placeholder="Suitable for..." value="">
+                </p>
+                <p>
+                    <input type="submit" id="add" value="Add CNG" asp-page-handler="AddCNG">
+                </p>
+                <h4 align="center" style="color:red">@Html.ValidationMessage("EmptyFieldsCNG")</h4>
+            </article>
+        </form>
+        @foreach (var diesel in Model.FuelManager.GetDiesels())
+        {
+    <form method="post">
+        <article class="fuel_card">
+            <h1>@diesel.FuelName</h1>
+            <h3>$@diesel.PricePerLiter/L</h3>
+            <p>
+                Purity: @diesel.Purity%<br>Viscosity: @diesel.Viscosity<br>Suitable for: @diesel.Suitability
+            </p>
+            <p>
+                <input type="text" id="NewPrice" name="NewPrice" asp-for="NewPrice" placeholder="New price..." value="" required>
+            </p>
+            <p>
+                <input name=@($"submit{@diesel.FuelName}") type="submit" id="Edit price" value="Edit price">
+            </p>
+            <p>
+                <input name=@($"remove{@diesel.FuelName}") type="submit" id="Remove" value="Remove fuel">
+            </p>
+        </article>
+    </form>}
+
+        @foreach (var cng in Model.FuelManager.GetCNGs())
+        {
+    <form method="post">
+        <article class="fuel_card">
+            <h1>@cng.FuelName</h1>
+            <h3>$@cng.PricePerLiter/L</h3>
+            <p>
+                Purity: @cng.Purity%<br>Viscosity: @cng.AirflowResistance<br>Suitable for: @cng.Suitability
+            </p>
+            <p>
+                <input type="text" id="NewPrice" name="NewPrice" asp-for="NewPrice" placeholder="New price..." value="" required>
+            </p>
+            <p>
+                <input name=@($"submit{cng.FuelName}") type="submit" id="Edit price" value="Edit price">
+            </p>
+            <p>
+                <input name=@($"remove{cng.FuelName}") type="submit" id="Remove" value="Remove fuel">
+            </p>
+        </article>
+    </form>}
+    </section>
+    <div class="side-menu">
+        <a href="/AdminAddFuel" class="side-menu-buy">Edit fuels</a>
+        <hr class="solid">
+        <a href="/PurchaseHistory" class="side-menu-profile">Purchases history</a>
+        <hr class="solid">
+        <a href="/Logout" class="side-menu-profile">Logout</a>
+        <hr class="solid">
+    </div>
+</body>

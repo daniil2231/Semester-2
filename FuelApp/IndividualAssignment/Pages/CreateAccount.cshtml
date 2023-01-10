@@ -1,0 +1,46 @@
+﻿@page
+@model IndividualAssignment.Pages.CreateAccountModel
+@{ }
+
+<div id="create-account-form-wrap">
+    <h2>Create account</h2>
+    <form id="create-account-form" method="post">
+        <partial name="_ValidationScriptsPartial" />
+        <p>
+            <span asp-validation-for="customer.Username"></span>
+            <input type="text" id="username" name="username" asp-for="customer.Username" placeholder="Username" />
+        </p>
+        <p>
+            <span asp-validation-for="customer.Password"></span>
+            <input type="password" id="password" name="password" asp-for="customer.Password" placeholder="Password" />
+        </p>
+        <p>
+            <span asp-validation-for="customer.CardNumber"></span>
+            <input type="text" id="card-number" name="cardNumber" asp-for="customer.CardNumber" placeholder="Card number" />
+        </p>
+        <p>
+            <span asp-validation-for="customer.CardValidThru"></span>
+            <input type="datetime" id="card-valid-thru" name="cardValidThru" asp-for="customer.CardValidThru" placeholder="Card valid thru" />
+        </p>
+        <p>
+            <span asp-validation-for="customer.CardCVC"></span>
+            <input type="number" id="card-cvc" name="cardCVC" asp-for="customer.CardCVC" placeholder="Card CVC" />
+        </p>
+        <p>
+            <span asp-validation-for="customer.ZipCode"></span>
+            <input type="text" id="zipcode" name="zipcode" asp-for="customer.ZipCode" placeholder="ZIP code" />
+        </p>
+        <p>
+            <span asp-validation-for="customer.PhoneNumber"></span>
+            <input type="number" id="phone-number" name="phoneNumber" asp-for="customer.PhoneNumber" placeholder="Phone number" />
+        </p>
+        <input type="submit" id="create-account" value="Create account">
+    </form>
+    <h3 align="center" style="color:red">@Html.ValidationMessage("EmptyFields")</h3>
+            @for (int i = 0; i < Model.errors.Count; i++)
+            {
+        <h3 align="center" style="color:red">@Html.ValidationMessage(i.ToString())</h3>}
+</div>
+<footer>
+    <p>Got any questions? Contact:<br>Email: daniilblagoev@gmail.com</p>
+</footer>

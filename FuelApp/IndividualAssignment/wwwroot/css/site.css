@@ -1,0 +1,201 @@
+﻿body {
+    background-color: #0C1618;
+    font-size: 1.6rem;
+    font-family: "Open Sans", sans-serif;
+    color: #00524E;
+}
+
+h2, h3 {
+    font-weight: 300;
+    text-align: center;
+}
+
+p {
+    position: relative;
+}
+
+#login-form-wrap, #create-account-form-wrap, #purchases-history-form-wrap {
+    background-color: #FAF4D3;
+    width: 35%;
+    margin: 30px auto;
+    text-align: center;
+    padding: 20px 0 0 0;
+    border-radius: 4px;
+    box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+}
+
+#login-form, #create-account-form {
+    padding: 0 60px 40px;
+}
+
+input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 4px;
+}
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"] {
+        width: 100%;
+        padding: 0 0 0 10px;
+        margin: 0;
+        color: #8a8b8e;
+        border: 1px solid #00524E;
+        font-style: normal;
+        font-size: 16px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        position: relative;
+        display: inline-block;
+        background: none;
+    }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus {
+            border-color: #3ca9e2;
+        }
+
+    input[type="submit"] {
+        border: none;
+        display: block;
+        background-color: #004643;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        font-size: 18px;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #008F88;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+#create-account-wrap {
+    background-color: #D1AC00;
+    color: #00524E;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 0 0 4px 4px;
+}
+
+#buy-fuel, #my-profile, #purchases-history {
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 15% 85%;
+    grid-template-areas:
+        "side main"
+        "footer footer";
+}
+
+section {
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fuel_card, .add_fuel {
+    border: 1px solid #2a9d8f;
+    border-radius: 15px;
+    width: 225px;
+    text-align: center;
+    margin: 10px;
+}
+
+article {
+    background-color: #FAF4D3;
+}
+
+.side-menu {
+    margin: 0;
+    padding: 0;
+    background-color: #FAF4D3;
+    text-transform: uppercase;
+    text-align: right;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-area: side;
+}
+
+.side-menu-buy:hover {
+    text-decoration: underline;
+}
+
+.side-menu-profile:hover {
+    text-decoration: underline;
+}
+
+.side-menu-buy, .side-menu-profile {
+    display: block;
+    color: #00524E;
+    font-style: normal;
+    font-weight: bold;
+    margin: 13px;
+    text-decoration: none;
+}
+
+#my-profile-form-wrap, #purchases-history-form-wrap {
+    background-color: #FAF4D3;
+    grid-area: main;
+    width: 70%;
+    margin: 30px auto;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    border-radius: 4px;
+    box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: #D1AC00;
+    color: #00524E;
+    grid-area: footer;
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+}
+
+#login-footer {
+    text-align: center;
+    background-color: #D1AC00;
+    color: #00524E;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+body {
+    min-height: 100vh;
+}

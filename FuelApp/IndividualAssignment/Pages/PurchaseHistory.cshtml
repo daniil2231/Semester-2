@@ -1,0 +1,39 @@
+﻿@page
+@model IndividualAssignment.Pages.PurchaseHistoryModel
+@{ }
+
+<body id="purchases-history">
+    <div id="purchases-history-form-wrap">
+        <h2>Purchases history</h2>
+        <table class="purchases-history-table">
+            <tr>
+                <th>Username</th>
+                <th>ZIP code</th>
+                <th>Fuel type</th>
+                <th>Liters purchased</th>
+                <th>Cost</th>
+            </tr>
+            @foreach (var purchase in Model.fuelManager.GetSalesHistory())
+            {
+<tr>
+    <th>@purchase.Username</th>
+    <th>@purchase.ZipCode</th>
+    <th>@purchase.FuelName</th>
+    <th>@purchase.LitersPurchased</th>
+    <th>@purchase.Cost</th>
+</tr>
+}
+        </table>
+    </div>
+    <div class="side-menu">
+        <a href="/AdminAddFuel" class="side-menu-buy">Edit fuels</a>
+        <hr class="solid">
+        <a href="/PurchaseHistory" class="side-menu-profile">Purchases history</a>
+        <hr class="solid">
+        <a href="/Logout" class="side-menu-profile">Logout</a>
+        <hr class="solid">
+    </div>
+    <footer>
+        <p>Got any questions? Contact:<br>Email: daniilblagoev@gmail.com</p>
+    </footer>
+</body>

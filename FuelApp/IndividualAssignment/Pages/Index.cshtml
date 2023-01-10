@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div id="login-form-wrap">
+    <h2>Login</h2>
+    <form id="login-form" method="post">
+        <p>
+            <input type="text" id="username" name="username" asp-for="Username" placeholder="Username">
+        </p>
+        <p>
+            <input type="password" id="password" name="password" asp-for="Password" placeholder="Password">
+        </p>
+        <p>
+            <input type="submit" id="login" value="Login">
+        </p>
+    </form>
+    <h3 align="center" style="color:red">@Html.ValidationMessage("InvalidCredentials")</h3>
+    <div id="create-account-wrap">
+        <p>Don't have an account? <a href="/CreateAccount">Create account</a></p>
+    </div>
+</div>
+<footer id="login-footer">
+    <p>Got any questions? Contact:<br>Email: daniilblagoev@gmail.com</p>
+</footer>
